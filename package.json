@@ -1,11 +1,11 @@
 {
-  "name": "test",
+  "name": "generate-pdf-from-html-template",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Swadesh Behera <swadesh@codenx.com>",
   "license": "MIT",
   "dependencies": {
     "handlebars": "^4.0.12",
-    "handlebars-pdf": "^1.0.1",
     "puppeteer": "^1.11.0"
   }
 }

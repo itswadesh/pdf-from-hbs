@@ -416,7 +416,7 @@
           <tr>
             <td class="email-masthead">
               <a href="https://example.com" class="email-masthead_name">
-                [Product Name]
+                {{product.name}}
               </a>
             </td>
           </tr>
@@ -427,8 +427,8 @@
                 <!-- Body content -->
                 <tr>
                   <td class="content-cell">
-                    <h1>Hi {{name}},</h1>
-                    <p>Thanks for using [Product Name]. This is an invoice for your recent purchase.</p>
+                    <h1>Hi {{firstName}},</h1>
+                    <p>Thanks for using {{product.name}}. This is an invoice for your recent purchase.</p>
                     <table class="attributes" width="100%" cellpadding="0" cellspacing="0">
                       <tr>
                         <td class="attributes_content">
