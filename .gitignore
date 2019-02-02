@@ -1,3 +1,4 @@
 node_modules
-exports/*
-!exports/.gitkeep 
+exports/invoice/*
+!exports/invoice/.gitkeep 
+.env

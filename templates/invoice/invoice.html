@@ -479,6 +479,7 @@
                         <td colspan="2">
                           <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                             <tr>
+                              <th></th>
                               <th class="purchase_heading">
                                 <p>Description</p>
                               </th>
@@ -488,12 +489,14 @@
                             </tr>
                             {{#each invoice_details}}
                             <tr>
-                              <td width="80%" class="purchase_item">{{description}}</td>
-                              <td class="align-right" width="20%" class="purchase_item">{{amount}}</td>
+                              <td width="20%"><img width="50" height="50" src="https://rukminim1.flixcart.com/flap/300/300/image/056951b2a76c633a.jpg?q=70" /></td>
+                              <td width="60%" class="purchase_item">{{description}}</td>
+                              <td width="20%" class="align-right" class="purchase_item">{{amount}}</td>
                             </tr>
                             {{/each}}
                             <tr>
-                              <td width="80%" class="purchase_footer" valign="middle">
+                              <td width="20%"></td>
+                              <td width="60%" class="purchase_footer" valign="middle">
                                 <p class="purchase_total purchase_total--label">Total</p>
                               </td>
                               <td width="20%" class="purchase_footer" valign="middle">

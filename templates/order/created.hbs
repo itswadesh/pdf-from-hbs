@@ -1,0 +1,203 @@
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>
+    <font face="Lato">
+        <table border="1px" width="600px" cellspacing="0" cellpadding="5">
+            <tbody>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellspacing="0" cellpadding="0" align="center">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="https://www.litekart.in" target="_blank" rel="noopener"
+                                                            data-saferedirecturl="https://www.google.com/url?q=https://www.litekart.in&amp;source=gmail&amp;ust=1545198871343000&amp;usg=AFQjCNHANMoTnHeyPQO8IEgKYlTKiEbn0Q">
+                                                            <img src="https://www.arialshop.com/img/logo.png" alt="Litekart"
+                                                                border="0" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <table border="0" cellspacing="0" cellpadding="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="width:69%;">
+                                                                        <h3>THANK YOU FOR YOUR ORDER FROM Litekart.</h3>
+                                                                        <p>
+                                                                            <span class="m_3121169440867303320font"
+                                                                                style="display:flex;text-align:justify">Your
+                                                                                order has been received. Thank you. You
+                                                                                will receive a confirmation call
+                                                                                regarding availability before dispatch.
+                                                                                Please
+                                                                                note items purchased at discount are
+                                                                                final and cannot be exchanged. Please
+                                                                                refer to your receipt for conditions
+                                                                                and after-sales
+                                                                                service policy. Order processing takes
+                                                                                3-24 working hou₹</span>
+                                                                        </p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div style="border: 1px solid grey;padding: 5px;margin-left: 10px;margin-top: 30px;">
+                                                                            <h5>Order Questions?</h5>
+                                                                            <p>
+                                                                                <span class="m_3121169440867303320font">
+                                                                                    <span class="m_3121169440867303320size">
+                                                                                        <b>Call Us:</b>&nbsp;
+                                                                                        <a>042 111-801-802</a>
+                                                                                        <br />
+                                                                                        <b>Email:</b>&nbsp;
+                                                                                        <a href="mailto:support@litekart.in"
+                                                                                            target="_blank" rel="noopener">support@litekart.in</a>
+                                                                                    </span>
+                                                                                </span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h3>Your order&nbsp;{{orderNo}}</h3>
+                                                        <p>
+                                                            <span class="m_3121169440867303320font">
+                                                                <span class="m_3121169440867303320size">Placed on
+                                                                    {{createdAt}} IST</span>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table border="0" width="650" cellspacing="0" cellpadding="0">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th align="left" bgcolor="#EAEAEA">Item</th>
+                                                                    <th align="left" bgcolor="#EAEAEA">Sku</th>
+                                                                    <th align="center" bgcolor="#EAEAEA">Qty</th>
+                                                                    <th align="right" bgcolor="#EAEAEA">Subtotal</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {{#each items}}
+                                                                <tr>
+                                                                    <td align="left" valign="top">
+                                                                        <strong>{{name}}</strong>
+                                                                    </td>
+                                                                    <td align="left" valign="top">{{sku}}</td>
+                                                                    <td align="center" valign="top">{{qty}}</td>
+                                                                    <td align="right" valign="top">
+                                                                        <span class="m_3121169440867303320font">₹{{price}}</span>
+                                                                    </td>
+                                                                </tr>
+                                                                {{/each}}
+                                                            </tbody>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="3" align="right">Subtotal</td>
+                                                                    <td align="right">
+                                                                        <span class="m_3121169440867303320font">₹{{amount.details.subtotal}}</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colspan="3" align="right">Shipping &amp;
+                                                                        Handling</td>
+                                                                    <td align="right">
+                                                                        <span class="m_3121169440867303320font">₹{{amount.details.shipping}}</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colspan="3" align="right">
+                                                                        <strong>Grand Total</strong>
+                                                                    </td>
+                                                                    <td align="right">
+                                                                        <strong>
+                                                                            <span class="m_3121169440867303320font">₹{{amount.total}}</span>
+                                                                        </strong>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellspacing="0" cellpadding="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h6>BILL TO:</h6>
+                                                                        <p>
+                                                                            <span class="m_3121169440867303320font">
+                                                                                <span class="m_3121169440867303320size">{{address.firstName}}&nbsp;{{address.lastName}}
+                                                                                    <br />{{address.address}}
+                                                                                    <br />{{address.city}},&nbsp;
+                                                                                    <br />India
+                                                                                    <br />T: {{address.phone}}</span>
+                                                                            </span>
+                                                                        </p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h6>SHIP TO:</h6>
+                                                                        <p>
+                                                                            <span class="m_3121169440867303320font">
+                                                                                <span class="m_3121169440867303320size">{{address.firstName}}&nbsp;{{address.lastName}}
+                                                                                    <br />{{address.address}}
+                                                                                    <br />{{address.city}},&nbsp;
+                                                                                    <br />India
+                                                                                    <br />T: {{address.phone}}</span>
+                                                                            </span>
+                                                                        </p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h6>SHIPPING METHOD:</h6>
+                                                                        <p>
+                                                                            <span class="m_3121169440867303320font">
+                                                                                <span class="m_3121169440867303320size">Free
+                                                                                    Shipping - Across India</span>
+                                                                            </span>
+                                                                        </p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h6>PAYMENT METHOD:</h6>
+                                                                        <p>
+                                                                            <span class="m_3121169440867303320font">
+                                                                                <span class="m_3121169440867303320size">
+                                                                                    <strong>Cash On Delivery</strong>
+                                                                                </span>
+                                                                            </span>
+                                                                        </p>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+    </font>
+    <h5>Thank you, Litekart!</h5>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+</div>
