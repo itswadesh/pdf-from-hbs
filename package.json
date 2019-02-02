@@ -17,6 +17,7 @@
     "nodemailer": "^5.1.1",
     "nodemailer-express-handlebars": "^3.0.0",
     "nodemailer-mailgun-transport": "^1.4.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "puppeteer": "^1.11.0",
     "querystring": "^0.2.0"
   }

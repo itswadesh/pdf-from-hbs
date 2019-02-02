@@ -9,23 +9,7 @@ const ReadFile = Util.promisify(Fs.readFile)
 dotenv.load({ path: '.env' })
 
 class Invoice {
-  async html(orderNo) {
-    try {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${process.env.TOKEN}`
-      const { data, status } = await axios.get(`${process.env.API}/orders/${orderNo}`)
-      // compile and render the template with handlebars
-      const templatePath = Path.resolve('templates', 'invoice', 'gst.html')
-      const content = await ReadFile(templatePath, 'utf8')
-      const template = Handlebars.compile(content)
-
-      return { order: data, html: template(data) }
-    } catch (e) {
-      throw new Error('Cannot create invoice HTML template.', e)
-    }
-  }
-
   async pdf(orderNo) {
-    console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzz', orderNo);
     const { order, html } = await this.html(orderNo)
     const browser = await Puppeteer.launch()
     const page = await browser.newPage()
@@ -44,17 +28,31 @@ class Invoice {
       }]
     }
     try {
-      await this.email(emailObj)
+      this.email(emailObj)
     }
     catch (e) {
       console.log('Email error...', e);
     }
   }
+  async html(orderNo) {
+    try {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${process.env.TOKEN}`
+      const { data, status } = await axios.get(`${process.env.API}/orders/${orderNo}`)
+      // compile and render the template with handlebars
+      const templatePath = Path.resolve('templates', 'invoice', 'gst.html')
+      const content = await ReadFile(templatePath, 'utf8')
+      const template = Handlebars.compile(content)
+      return { order: data, html: template(data) }
+    } catch (e) {
+      throw new Error('Cannot create invoice HTML template.', e)
+    }
+  }
+
   async email({ to, subject, bcc, template, html, context, attachments }) {
-    const { EMAIL_ADDRESS, MAILGUN_API_KEY } = process.env
+    const { EMAIL_ADDRESS, SENDGRID_API_KEY } = process.env
     const nodemailer = require('nodemailer')
     const hbs = require('nodemailer-express-handlebars')
-    var options = {
+    var hbsOptions = {
       viewEngine: {
         extname: '.hbs',
         layoutsDir: 'templates/',
@@ -65,16 +63,15 @@ class Invoice {
       extName: '.hbs'
     };
 
-    var mg = require('nodemailer-mailgun-transport');
+    var sg = require('nodemailer-sendgrid-transport');
 
-    var auth = {
+    var options = {
       auth: {
-        api_key: MAILGUN_API_KEY,
-        domain: 'angularcode.com'
+        api_key: SENDGRID_API_KEY
       }
     }
-    var mailer = nodemailer.createTransport(mg(auth));
-    mailer.use('compile', hbs(options));
+    var mailer = nodemailer.createTransport(sg(options));
+    mailer.use('compile', hbs(hbsOptions));
     try {
       const info = await mailer.sendMail({ from: EMAIL_ADDRESS, to, subject, template, context, attachments })
       console.log('email success...', info);
